@@ -10,3 +10,10 @@ FROM ansokningar
 WHERE Beslut ='Beviljad'
 GROUP BY utbildningsomrade
 ORDER BY antal_ansokningar DESC;
+
+--Fråga c: Antal AVSLAGNA ansökningar per utbildningsområde
+SELECT utbildningsomrade, COUNT(*) AS antal_ansokningar
+FROM ansokningar 
+WHERE Beslut = 'Avslag' 
+GROUP BY utbildningsomrade
+ORDER BY antal_ansokningar DESC; 
