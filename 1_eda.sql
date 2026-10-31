@@ -57,3 +57,8 @@ ROUND(100 * sum( CASE WHEN studieform = 'Bunden' THEN 1 ELSE 0 END)/COUNT (*), 1
 FROM ansokningar
 GROUP BY utbildningsomrade
 ORDER BY andel_distans_procent DESC;
+
+--Fråga i: Antal utbildningar som innehåller ordet AI
+SELECT COUNT (*) AS antal_ai_utbildningar
+FROM ansokningar
+WHERE utbildningsnamn LIKE '%AI%';
