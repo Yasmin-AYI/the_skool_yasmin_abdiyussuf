@@ -35,3 +35,9 @@ WHERE Beslut = 'Avslag' AND  utbildningsomrade = 'Data/IT'
 GROUP BY utbildningsnamn
 ORDER BY antal_ansokningar DESC;
 
+--Fråga f: Antalet BEVILJADE ansökninghar per utbilningsanordnare administrativ enhet & utbildningsnamn, inom Data/IT
+SELECT anordnare,utbildningsnamn, COUNT (*) AS antal_ansokningar
+FROM ansokningar
+Where Beslut = 'Beviljad' AND utbildningsomrade = 'Data/IT'
+GROUP BY  anordnare, utbildningsnamn
+ORDER BY antal_ansokningar DESC;
