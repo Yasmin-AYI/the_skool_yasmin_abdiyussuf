@@ -41,3 +41,19 @@ FROM ansokningar
 Where Beslut = 'Beviljad' AND utbildningsomrade = 'Data/IT'
 GROUP BY  anordnare, utbildningsnamn
 ORDER BY antal_ansokningar DESC;
+
+--Fråga g: Topp 5 län efter antal beviljade ansökningar
+SELECT lan , COUNT (*) AS antal_ansokningar
+FROM ansokningar 
+WHERE Beslut = 'Beviljad' AND lan != 'Flera kommuner'
+GROUP BY lan
+ORDER BY antal_ansokningar DESC	
+FETCH FIRST 5 ROWS ONLY;
+
+--Fråga h: Andel distans och andel bundna utbildningar inom respektive utbildningsomtåde
+SELECT utbildningsomrade,
+ROUND(100 * SUM( CASE WHEN studieform = 'Distans' THEN 1 ELSE 0 END)/COUNT(*),1) AS andel_distans_procent,
+ROUND(100 * sum( CASE WHEN studieform = 'Bunden' THEN 1 ELSE 0 END)/COUNT (*), 1) AS andel_bunden_procent
+FROM ansokningar
+GROUP BY utbildningsomrade
+ORDER BY andel_distans_procent DESC;
