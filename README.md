@@ -89,7 +89,7 @@ Viktigt för The Skool att tänka på är att inte satsa på områden som tex Ju
 
 I denna Labb använde jag AI som en bollplanka för frågor samt felsökning.
 
-- Jag skrev alla SQL frågor själv men fick hjälp av AI när jag stötte på problem. 
+- Jag skrev alla SQL frågor själv men fick hjälp av AI när jag stötte på problem. (Matcha ordet AI med LIKE)
 - AI hjälpte även med att förstå lärarens LOAD exempel
 - AI hjälpte att städa upp CSV:n samt mina mötesanteckningarna.
 
